@@ -1,0 +1,1 @@
+insert into inventory.drug_master_tbl (uid, manufacturer, name, price, quantity, create_usr, create_ts, update_usr, update_ts) values ('uuid1', 'manufacturer one', 'drug name', '12.5', '1200', 'liquibase-usr', current_timestamp, 'liquibase-update-usr', current_timestamp);
