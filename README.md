@@ -88,7 +88,7 @@ Postman collection to test the endpoints are available in the following location
 
 **Things to Improve/Implement:**
 
-1. There's an annoying error occuring then postgresql is spun up, but it is not a showstopper. Haven't got a chance to look into the rootcause as yet. "FATAL:  database "inventory" does not exist".
-2. It kinda little weird that we had to create 2 endpoints for UID and Manufacturer. It certainly can be handled differently. I believe GraphQL would handle this situation better than REST.
-3. There's still lot of room to improve the docker-compose file and unit testing scenarios.
+1. There's an annoying error occuring when postgresql container is spun up, but it is not a showstopper though. Haven't got a chance to look into the rootcause as yet. "FATAL:  database "inventory" does not exist".
+2. It kinda weird that we had to create 2 endpoints for UID and Manufacturer. It can certainly be handled differently. I believe GraphQL would handle this situation better than REST.
+3. There's still a lot of room to improve the docker-compose file and unit testing scenarios.
 4. Adding listeners to the JPA entities and use them as triggers to notify SSE (Server Send Events) or an Event Bus.
