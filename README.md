@@ -1,6 +1,6 @@
 # inventory-management
 
-**Tools/Technology used**:
+**Tools/Technologies used**:
 
 Spring-Boot
 
@@ -39,12 +39,14 @@ The Java application is a Spring Boot app with Maven as the build tool. To build
 The docker-compose.yml file orchestrates all the containers needed for the project to run. The two containers that make up the project are:
 
 **postgres** - contains the Postgres database
+
 **api** - contains the Java Spring Boot application
 
 To spin up the project, run "docker compose up". This will build the appropriate images and spin up the containers. Individual containers can also be selectively spun up if you are actively working on a certain component. For example, docker compose up postgres will launch just the Postgres container allowing the Java application to be run locally.
 
 In the default configuration, the API will be available at http://localhost:8080/.
 
+Emphasized more on the architecture for this assignment rather actual business rules.
 
 **Liquibase:**
 
