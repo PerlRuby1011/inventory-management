@@ -78,7 +78,7 @@ NOTE: Swagger container is not configured in the docker, hence above url can be 
 **Scaling the application:**
 
 Since it is mentioned that traffic would be high at 12am everyday, we can probabaly do a scheduled Auto-scaling group. There are other options available as well:
-1. Create API gateway and Lambda would be a perfect combination for the update operations.
+1. Creating API gateway and Lambda would be a perfect combination for the update operations.
 2. In case the above services can't be used, we can employ an SQS in front of EC2 instances and create a decoupled resilient architecture.
 3. Since we're using Docker, Kubernetes would be an excellent solution too.
 
