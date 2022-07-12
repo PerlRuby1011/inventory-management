@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "eba0456c-2fe7-47af-94db-081a580b20cd",
+		"name": "DrugInventory",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Fetch By UUID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/inventory/api/druginfo/bdab0126-d0b7-4e8a-a5d7-dd8597713962",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"inventory",
+						"api",
+						"druginfo",
+						"bdab0126-d0b7-4e8a-a5d7-dd8597713962"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Objects",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"drugList\": [\n        {\n        \"manufacturer\": \"manufacturer one\",\n        \"name\": \"drug 1\",\n        \"quantity\": 1201,\n        \"price\": 12.51\n        },\n        {\n        \"manufacturer\": \"manufacturer one\",\n        \"name\": \"drug 2\",\n        \"quantity\": 1202,\n        \"price\": 12.52\n        },\n        {\n        \"manufacturer\": \"manufacturer 2\",\n        \"name\": \"drug name\",\n        \"quantity\": 1201,\n        \"price\": 12.51\n        }                \n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/inventory/api/druginfo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"inventory",
+						"api",
+						"druginfo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/inventory/api/druginfo/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"inventory",
+						"api",
+						"druginfo",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch By Manufacturer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/inventory/api/druginfo/manufacturer/manufacturer 2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"inventory",
+						"api",
+						"druginfo",
+						"manufacturer",
+						"manufacturer 2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
