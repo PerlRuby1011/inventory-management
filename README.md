@@ -94,3 +94,13 @@ Postman collection to test the endpoints are available in the following location
 2. It is kinda weird that we had to create 2 endpoints for UID and Manufacturer. It can certainly be handled differently. I believe GraphQL would handle this situation better than REST.
 3. docker-compose file and unit testing scenarios.
 4. Adding listeners to the JPA entities and use them as triggers to notify SSE (Server Send Events) or an Event Bus.
+5. Due to time constraints, the additional requirement to consume YAML payload via our rest endpoints is NOT implemented. Though YAML payload is not a typical practice, we should be able to achieve it by introducing the maven dependency "jackson-dataformat-yaml" and adding an endpoint to consume content type {"application/yaml", "application/yml"} like the code snippet provided below:
+
+`  @PostMapping(value = "/save/yaml", consumes = {"application/yaml", "application/yml"})`
+
+`     public ResponseEntity<List<DrugInfoDTO>> createResourcesFromYML(@RequestBody final Resource resource) throws IOException {  `
+
+`	     try (final var inputStream = resource.getInputStream()) {`
+
+`           final DrugInfoWrapper drugInfoWrapper = new ObjectMapper(new YAMLFactory()).readValue(inputStream, DrugInfoWrapper.class);`
+
