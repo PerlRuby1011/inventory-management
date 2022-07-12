@@ -74,8 +74,12 @@ Since it is mentioned that traffic would be high at 12am everyday, we can probab
 2. In case the above services can't be used, we can employ an SQS in front of EC2 instances and create a decoupled resilient architecture.
 
 
+**POSTMAN**
+
+Postman collection to test the endpoints are available in the following location: "/inventory-management/Postman Collection/DrugInventory.postman_collection.json"
+
 **Things to Improve**
 
-1. There's an annoying error occuring then postgresql is spun up, but it is not a showstopper. Haven't got a chance to look into the rootcause as yet.
+1. There's an annoying error occuring then postgresql is spun up, but it is not a showstopper. Haven't got a chance to look into the rootcause as yet. "FATAL:  database "inventory" does not exist".
 2. It kinda little weird that we had to create 2 endpoints for UID and Manufacturer. It certainly can be handled differently. I believe GraphQL would handle this situation better than REST.
-3. There's still lot of room to improve the docker-compose and unit testing scenarios.
+3. There's still lot of room to improve the docker-compose file and unit testing scenarios.
