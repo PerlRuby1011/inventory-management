@@ -27,6 +27,7 @@ Custom Exceptions
 Maven
 
 
+
 **Running the Project in Docker:**
 
 **Build the Java application:**
@@ -49,23 +50,28 @@ In the default configuration, the API will be available at http://localhost:8080
 
 Liquibase is used in this project to keep track of RDBMS changes and to avoid manual effort during deployments into various environments. liquibase.properties found under the "resources" directory is used to generate the initial change log, it won't be used any further. Files found under "/inventory-management/src/main/resources/db/changelog/" are executed during the first run and we can verify the db changes applied via the following tables: "inventory.databasechangelog" and "inventory.databasechangeloglock".
 
+
 **Database:**
 
 Postgres when spun is using "01.sql" init scripts to create the schema "inventory" and it is used further by Hibernate entities and Liquibase sqls.
+
 
 **Unit Test Cases:**
 
 Unit test cases are created for the DrugController. Test cases cover both postive and negative scenarios in most cases.
 
+
 **Db Table Auditing:** 
 
 "Auditable.java" file is used to track the audit information. If a new table wants to keep track of create user/timestamp, update user/timestamp entires, it can simply extend this "Auditable.java". User info will be populated into the database via Spring security Context (please see "JPAAuditConfig.java").
+
 
 **Swagger:**
 
 Swagger UI has been configured to take a wholistic view of the end points being supported by this application. Swagger helps QA teams and other teams to figure the end points being implemented in any given project. here's the url: http://localhost:8080/inventory/swagger-ui/#/drug-controller 
 
 NOTE: Swagger container is not configured in the docker, hence above url can be accessed only when Spring boot is ran outside docker.
+
 
 **Scaling the application:**
 
@@ -78,6 +84,7 @@ Since it is mentioned that traffic would be high at 12am everyday, we can probab
 **POSTMAN:**
 
 Postman collection to test the endpoints are available in the following location: "/inventory-management/Postman Collection/DrugInventory.postman_collection.json"
+
 
 **Things to Improve:**
 
