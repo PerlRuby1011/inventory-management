@@ -30,9 +30,11 @@ Maven
 **Running the Project in Docker**
 
 **Build the Java application**
+
 The Java application is a Spring Boot app with Maven as the build tool. To build the application, simply run "**mvn clean install -DskipTests**" from the root of the project. This command will clean out the previous build directory (target/) and rebuild the project. Of note, this command builds the JAR file we will use to deploy the application within Docker. We can use "**mvn clean install**" if an instance of postgresql db is running already via "**docker compose up postgres**".
 
 **Spin up the Project**
+
 The docker-compose.yml file orchestrates all the containers needed for the project to run. The two containers that make up the project are:
 
 **postgres** - contains the Postgres database
@@ -60,6 +62,7 @@ Unit test cases are created for the DrugController. Test cases cover both postiv
 "Auditable.java" file is used to track the audit information. If a new table wants to keep track of create user/timestamp, update user/timestamp entires, it can simply extend this "Auditable.java". User info will be populated into the database via Spring security Context (please see "JPAAuditConfig.java").
 
 **Swagger**
+
 Swagger UI has been configured to take a wholistic view of the end points being supported by this application. Swagger helps QA teams and other teams to figure the end points being implemented in any given project. here's the url: http://localhost:8080/inventory/swagger-ui/#/drug-controller 
 
 NOTE: Swagger container is not configured in the docker, hence above url can be accessed only when Spring boot is ran outside docker.
